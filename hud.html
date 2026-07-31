@@ -222,9 +222,9 @@
   .seq-card:nth-child(3),.seq-card:nth-child(3) .chip{animation-delay:4s}
   .seq-card:nth-child(4),.seq-card:nth-child(4) .chip{animation-delay:6s}
   @keyframes seqcard{
-    0%,100%{border-color:var(--line);background:var(--card-2);transform:translateY(0)}
-    6%,20%{border-color:var(--accent);background:var(--elev);transform:translateY(-4px);box-shadow:0 16px 40px -20px rgba(0,0,0,.5)}
-    26%{border-color:var(--line);background:var(--card-2);transform:translateY(0);box-shadow:none}
+    0%,100%{border-color:var(--line);background:transparent;transform:translateY(0);box-shadow:none}
+    6%,20%{border-color:var(--accent);background:var(--card);transform:translateY(-4px);box-shadow:0 14px 34px -22px rgba(50,42,26,.3)}
+    26%{border-color:var(--line);background:transparent;transform:translateY(0);box-shadow:none}
   }
   @keyframes seqchip{
     0%,100%{background:var(--line);color:var(--muted)}
@@ -294,6 +294,8 @@
   .cart .uc-dot{fill:var(--il)!important;stroke:none!important}
   .cart .uc-accent-fill{fill:var(--il-accent)!important;stroke:none!important}
   .cart .uc-line{fill:none!important}
+  .cart .lane{stroke:var(--il)!important;stroke-width:1;fill:none;opacity:.3;stroke-dasharray:2 6;stroke-linecap:round}
+  .cart .lbl{fill:var(--il);opacity:.55;font:500 8.5px/1 'IBM Plex Mono',monospace;letter-spacing:.14em}
   .cart .pulse{transform-box:fill-box;transform-origin:center;animation:cartpulse 3.2s ease-in-out infinite}
   @keyframes cartpulse{0%,100%{opacity:.85;transform:scale(1)}50%{opacity:.3;transform:scale(1.18)}}
   .assur li:first-child{border-top:0}.assur li .p{color:var(--accent)}
@@ -737,19 +739,20 @@
           <p>Tell us where coordination is getting expensive. We'll assess whether Process Mapping is the right first engagement — without pretending every problem needs orchestration.</p>
           <ul class="assur"><li>One critical process</li><li>A standalone, useful deliverable</li><li>No obligation to continue</li></ul>
           <div class="cart" aria-hidden="true">
-            <svg viewBox="0 0 240 150" fill="none">
-              <path class="uc-line" d="M30 115L92 72"/>
-              <path class="uc-line" d="M92 72L152 108"/>
-              <path class="uc-line" d="M152 108L212 64"/>
-              <path class="uc-line" d="M92 72L120 28"/>
-              <path class="uc-line" d="M152 108L138 146"/>
-              <circle class="uc-dot" cx="30" cy="115" r="5"/>
-              <circle class="uc-dot" cx="92" cy="72" r="5"/>
-              <circle class="uc-dot" cx="120" cy="28" r="5"/>
-              <circle class="uc-dot" cx="212" cy="64" r="5"/>
-              <circle class="uc-dot" cx="138" cy="146" r="5"/>
-              <circle class="uc-accent pulse" cx="152" cy="108" r="13"/>
-              <circle class="uc-accent-fill" cx="152" cy="108" r="6"/>
+            <svg viewBox="0 0 262 140" fill="none">
+              <line class="lane" x1="52" y1="34" x2="254" y2="34"/>
+              <line class="lane" x1="52" y1="74" x2="254" y2="74"/>
+              <line class="lane" x1="52" y1="114" x2="254" y2="114"/>
+              <text class="lbl" x="4" y="37">SALES</text>
+              <text class="lbl" x="4" y="77">OPS</text>
+              <text class="lbl" x="4" y="117">DELIVERY</text>
+              <path class="uc-line" d="M62 34 L110 74 L158 114 L206 74 L250 34"/>
+              <circle class="uc-dot" cx="62" cy="34" r="4.5"/>
+              <circle class="uc-dot" cx="110" cy="74" r="4.5"/>
+              <circle class="uc-dot" cx="206" cy="74" r="4.5"/>
+              <circle class="uc-dot" cx="250" cy="34" r="4.5"/>
+              <circle class="uc-accent pulse" cx="158" cy="114" r="12"/>
+              <circle class="uc-accent-fill" cx="158" cy="114" r="5.5"/>
             </svg>
           </div>
         </div>
