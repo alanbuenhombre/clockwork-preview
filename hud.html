@@ -289,6 +289,13 @@
   .cc p{color:var(--text);font-size:15.5px;margin-bottom:26px}
   .assur{list-style:none}
   .assur li{display:flex;align-items:center;gap:12px;padding:11px 0;font-size:14.5px;color:var(--text);border-top:1px solid var(--line)}
+  .cart{margin-top:36px;max-width:260px}
+  .cart svg{width:100%;height:auto;display:block;overflow:visible}
+  .cart .uc-dot{fill:var(--il)!important;stroke:none!important}
+  .cart .uc-accent-fill{fill:var(--il-accent)!important;stroke:none!important}
+  .cart .uc-line{fill:none!important}
+  .cart .pulse{transform-box:fill-box;transform-origin:center;animation:cartpulse 3.2s ease-in-out infinite}
+  @keyframes cartpulse{0%,100%{opacity:.85;transform:scale(1)}50%{opacity:.3;transform:scale(1.18)}}
   .assur li:first-child{border-top:0}.assur li .p{color:var(--accent)}
   .form{border:0;outline:.5px solid var(--line);outline-offset:-.5px;border-radius:var(--radius-lg);padding:30px;background:var(--card)}
   .form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
@@ -729,6 +736,22 @@
           <h2 class="display">Which process is costing you control?</h2>
           <p>Tell us where coordination is getting expensive. We'll assess whether Process Mapping is the right first engagement — without pretending every problem needs orchestration.</p>
           <ul class="assur"><li>One critical process</li><li>A standalone, useful deliverable</li><li>No obligation to continue</li></ul>
+          <div class="cart" aria-hidden="true">
+            <svg viewBox="0 0 240 150" fill="none">
+              <path class="uc-line" d="M30 115L92 72"/>
+              <path class="uc-line" d="M92 72L152 108"/>
+              <path class="uc-line" d="M152 108L212 64"/>
+              <path class="uc-line" d="M92 72L120 28"/>
+              <path class="uc-line" d="M152 108L138 146"/>
+              <circle class="uc-dot" cx="30" cy="115" r="5"/>
+              <circle class="uc-dot" cx="92" cy="72" r="5"/>
+              <circle class="uc-dot" cx="120" cy="28" r="5"/>
+              <circle class="uc-dot" cx="212" cy="64" r="5"/>
+              <circle class="uc-dot" cx="138" cy="146" r="5"/>
+              <circle class="uc-accent pulse" cx="152" cy="108" r="13"/>
+              <circle class="uc-accent-fill" cx="152" cy="108" r="6"/>
+            </svg>
+          </div>
         </div>
         <form class="form" onsubmit="return false">
           <div class="row"><div class="field"><label>Name</label><input type="text" placeholder="Jane Doe"></div><div class="field"><label>Work email</label><input type="email" placeholder="jane@company.com"></div></div>
