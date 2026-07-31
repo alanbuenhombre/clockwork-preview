@@ -289,15 +289,18 @@
   .cc p{color:var(--text);font-size:15.5px;margin-bottom:26px}
   .assur{list-style:none}
   .assur li{display:flex;align-items:center;gap:12px;padding:11px 0;font-size:14.5px;color:var(--text);border-top:1px solid var(--line)}
-  .cart{margin-top:36px;max-width:260px}
-  .cart svg{width:100%;height:auto;display:block;overflow:visible}
-  .cart .uc-dot{fill:var(--il)!important;stroke:none!important}
-  .cart .uc-accent-fill{fill:var(--il-accent)!important;stroke:none!important}
-  .cart .uc-line{fill:none!important}
-  .cart .lane{stroke:var(--il)!important;stroke-width:1;fill:none;opacity:.3;stroke-dasharray:2 6;stroke-linecap:round}
-  .cart .lbl{fill:var(--il);opacity:.55;font:500 8.5px/1 'IBM Plex Mono',monospace;letter-spacing:.14em}
-  .cart .pulse{transform-box:fill-box;transform-origin:center;animation:cartpulse 3.2s ease-in-out infinite}
-  @keyframes cartpulse{0%,100%{opacity:.85;transform:scale(1)}50%{opacity:.3;transform:scale(1.18)}}
+  /* unified assurances + illustration: one connected 3-step journey */
+  .assur-flow{position:relative;margin-top:26px;display:flex;flex-direction:column}
+  .assur-flow::before{content:"";position:absolute;left:8px;top:30px;bottom:30px;width:1.5px;background:var(--line)}
+  .af{position:relative;z-index:1;display:grid;grid-template-columns:16px 1fr;gap:18px;align-items:center;padding:15px 0;border-top:1px solid var(--line)}
+  .af:first-child{border-top:0}
+  .af .dot{position:relative;justify-self:center;width:13px;height:13px;border-radius:50%;background:var(--il);box-shadow:0 0 0 5px var(--bg)}
+  .af.key .dot{width:15px;height:15px;background:var(--il-accent);box-shadow:0 0 0 5px var(--bg)}
+  .af.key .dot::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:1.5px solid var(--il-accent);animation:afpulse 3s ease-in-out infinite}
+  .af.open .dot{background:var(--bg);border:1.6px solid var(--il);box-shadow:0 0 0 4px var(--bg)}
+  .af p{margin:0;font-size:14.5px;color:var(--text)}
+  .af.key p{color:var(--ink);font-weight:500}
+  @keyframes afpulse{0%,100%{transform:scale(1);opacity:.55}50%{transform:scale(1.4);opacity:0}}
   .assur li:first-child{border-top:0}.assur li .p{color:var(--accent)}
   .form{border:0;outline:.5px solid var(--line);outline-offset:-.5px;border-radius:var(--radius-lg);padding:30px;background:var(--card)}
   .form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
@@ -737,23 +740,10 @@
           <span class="eyebrow">Map a process</span>
           <h2 class="display">Which process is costing you control?</h2>
           <p>Tell us where coordination is getting expensive. We'll assess whether Process Mapping is the right first engagement — without pretending every problem needs orchestration.</p>
-          <ul class="assur"><li>One critical process</li><li>A standalone, useful deliverable</li><li>No obligation to continue</li></ul>
-          <div class="cart" aria-hidden="true">
-            <svg viewBox="0 0 262 140" fill="none">
-              <line class="lane" x1="52" y1="34" x2="254" y2="34"/>
-              <line class="lane" x1="52" y1="74" x2="254" y2="74"/>
-              <line class="lane" x1="52" y1="114" x2="254" y2="114"/>
-              <text class="lbl" x="4" y="37">SALES</text>
-              <text class="lbl" x="4" y="77">OPS</text>
-              <text class="lbl" x="4" y="117">DELIVERY</text>
-              <path class="uc-line" d="M62 34 L110 74 L158 114 L206 74 L250 34"/>
-              <circle class="uc-dot" cx="62" cy="34" r="4.5"/>
-              <circle class="uc-dot" cx="110" cy="74" r="4.5"/>
-              <circle class="uc-dot" cx="206" cy="74" r="4.5"/>
-              <circle class="uc-dot" cx="250" cy="34" r="4.5"/>
-              <circle class="uc-accent pulse" cx="158" cy="114" r="12"/>
-              <circle class="uc-accent-fill" cx="158" cy="114" r="5.5"/>
-            </svg>
+          <div class="assur-flow">
+            <div class="af key"><span class="dot"></span><p>One critical process</p></div>
+            <div class="af"><span class="dot"></span><p>A standalone, useful deliverable</p></div>
+            <div class="af open"><span class="dot"></span><p>No obligation to continue</p></div>
           </div>
         </div>
         <form class="form" onsubmit="return false">
