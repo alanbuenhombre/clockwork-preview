@@ -244,6 +244,8 @@
   .tstep:nth-child(2) .tmark svg{animation-delay:.5s}
   .tstep:nth-child(3) .tmark svg{animation-delay:1s}
   .tstep:nth-child(4) .tmark svg{animation-delay:1.5s}
+  .tstep.open .tmark svg{color:var(--muted);animation:none}
+  .tstep.open .tinfo b{color:var(--lede)}
   @keyframes tcheck{0%{transform:scale(1)}3%{transform:scale(1.17)}7%{transform:scale(1)}72%,100%{transform:scale(1)}}
 
   /* ===== ENGAGEMENTS — static rows with folder-tab lines ===== */
@@ -671,11 +673,11 @@
     </div>
     <div class="repwf">
       <div class="repwf-top"><div><span class="eyebrow">Representative workflow</span><h3>New client onboarding</h3></div><span class="note">Example, not a client claim</span></div>
-      <div class="track">
-        <div class="tstep"><span class="tmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg></span><span class="tinfo"><b>Request received</b><span>Sales · Controlled</span></span></div>
-        <div class="tstep"><span class="tmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg></span><span class="tinfo"><b>Information checked</b><span>Operations · Controlled</span></span></div>
-        <div class="tstep"><span class="tmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg></span><span class="tinfo"><b>Systems updated</b><span>Automated · Controlled</span></span></div>
-        <div class="tstep"><span class="tmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg></span><span class="tinfo"><b>Handoff complete</b><span>Delivery · Complete</span></span></div>
+      <div class="seq">
+        <div class="seq-card"><span class="ic"><svg viewBox="0 0 24 24" fill="none"><path class="seq-ln" d="M4 14v3.5A2.5 2.5 0 0 0 6.5 20h11a2.5 2.5 0 0 0 2.5-2.5V14"/><path class="seq-ac" d="M12 4v9"/><path class="seq-ac" d="M8.5 9.5 12 13l3.5-3.5"/></svg></span><b>Request received</b><span class="own">Sales</span><span class="chip"><span class="d"></span>Controlled</span></div>
+        <div class="seq-card"><span class="ic"><svg viewBox="0 0 24 24" fill="none"><rect class="seq-ln" x="4" y="4" width="16" height="16" rx="3.5"/><path class="seq-ac" d="m8.5 12.5 2.5 2.5 5-5.5"/></svg></span><b>Information checked</b><span class="own">Operations</span><span class="chip"><span class="d"></span>Controlled</span></div>
+        <div class="seq-card"><span class="ic"><svg viewBox="0 0 24 24" fill="none"><path class="seq-ln" d="M20 12a8 8 0 1 1-2.34-5.66"/><path class="seq-ac" d="M20 4v4h-4"/></svg></span><b>Systems updated</b><span class="own">Automated</span><span class="chip"><span class="d"></span>Controlled</span></div>
+        <div class="seq-card"><span class="ic"><svg viewBox="0 0 24 24" fill="none"><path class="seq-ln" d="M4 12h10"/><path class="seq-ac" d="m11 7 5 5-5 5"/><circle class="seq-af" cx="19.5" cy="12" r="1.8"/></svg></span><b>Handoff complete</b><span class="own">Delivery</span><span class="chip"><span class="d"></span>Complete</span></div>
       </div>
     </div>
   </div>
@@ -752,18 +754,10 @@
           <span class="eyebrow">Map a process</span>
           <h2 class="display">Which process is costing you control?</h2>
           <p>Tell us where coordination is getting expensive. We'll assess whether Process Mapping is the right first engagement — without pretending every problem needs orchestration.</p>
-          <div class="ahud" aria-label="Engagement scope">
-            <div class="ahud-head">
-              <span class="ahud-title">Assessment scope</span>
-              <span class="ahud-live"><i></i>READY</span>
-            </div>
-            <div class="ahud-rows">
-              <div class="ahr"><span class="n"></span><span class="k">SCOPE</span><span class="v">One critical process</span></div>
-              <div class="ahr"><span class="n"></span><span class="k">OUTPUT</span><span class="v">A standalone, useful deliverable</span></div>
-              <div class="ahr"><span class="n"></span><span class="k">COMMIT</span><span class="v">No obligation to continue</span></div>
-            </div>
-            <div class="ahud-bar"><span></span></div>
-            <div class="ahud-foot"><span>// PROTOCOL · NO LOCK-IN</span><span>CW-0001</span></div>
+          <div class="track">
+            <div class="tstep"><span class="tmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg></span><span class="tinfo"><b>One critical process</b><span>Scoped</span></span></div>
+            <div class="tstep"><span class="tmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg></span><span class="tinfo"><b>A standalone, useful deliverable</b><span>Owned by you</span></span></div>
+            <div class="tstep open"><span class="tmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="10"/></svg></span><span class="tinfo"><b>No obligation to continue</b><span>Optional</span></span></div>
           </div>
         </div>
         <form class="form" onsubmit="return false">
