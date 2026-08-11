@@ -384,6 +384,23 @@
   }
   @media(max-width:520px){.stages{grid-template-columns:1fr}.seq{grid-template-columns:1fr}.form .row{grid-template-columns:1fr}section{padding:66px 0}}
 
+
+  /* ---- engagements as overlapping circles (Venn) ---- */
+  .circs{display:flex;justify-content:center;align-items:center;flex-wrap:nowrap;margin-top:26px}
+  .circ{flex:0 0 auto;width:min(33vw,376px);aspect-ratio:1;border:1px solid var(--line);border-radius:50%;position:relative;display:grid;place-items:center}
+  .circ + .circ{margin-left:-12%}
+  .circ:nth-child(2){z-index:1}
+  .ci{width:60%;text-align:left}
+  .ci .dur{display:block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.05em;color:var(--muted);margin-bottom:9px}
+  .ci h3{font-size:clamp(22px,2.3vw,33px);font-weight:300;line-height:1.02;letter-spacing:-.02em;color:var(--ink)}
+  .ci .price{display:block;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);margin-top:11px}
+  .ci p{font-size:12.5px;line-height:1.5;color:var(--lede);margin-top:14px;max-width:23ch}
+  @media(max-width:860px){
+    .circs{flex-direction:column}
+    .circ{width:min(80vw,330px)}
+    .circ + .circ{margin-left:0;margin-top:-16%}
+    .ci{width:66%}
+  }
 </style>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400&family=Manrope:wght@200;300;400;500&display=swap" rel="stylesheet">
 <style id="cwhero-style">
@@ -690,43 +707,10 @@
 <section class="light" id="engagements">
   <div class="wrap">
     <div class="eng-head"><h2 class="display">Start with one process. <b>Keep going only if it earns the right.</b></h2><p>Every stage produces something useful and owned by you. The relationship can stop after mapping, continue through production, or expand into managed hosting and evolution.</p></div>
-    <div class="efolds">
-      <article class="efold" style="--i:0">
-        <svg class="foldtab" viewBox="0 0 96 23"><path d="M0 23 C10 23 10 3 21 3 L75 3 C86 3 86 23 96 23"/></svg>
-        <div class="erow">
-          <div><span class="dur">2–3 weeks</span><h3>Process<br>Mapping</h3><span class="price">Expected $10K–$15K</span></div>
-          <div><p class="edesc">We map one critical process, identify quick wins, and build the business case from your own operating numbers.</p><p class="efine">Valuable on its own. Final price depends on scope.</p></div>
-          <ul class="efeat">
-            <li><i class="sq"></i>BPMN 2.0 process maps</li>
-            <li><i class="sq"></i>Quick-win recommendations</li>
-            <li><i class="sq"></i>Business case and orchestration roadmap</li>
-          </ul>
-        </div>
-      </article>
-      <article class="efold" style="--i:1">
-        <svg class="foldtab" viewBox="0 0 96 23"><path d="M0 23 C10 23 10 3 21 3 L75 3 C86 3 86 23 96 23"/></svg>
-        <div class="erow">
-          <div><span class="dur">6–10 weeks per process</span><h3>Orchestration<br>Build</h3><span class="price">Fixed scope</span></div>
-          <div><p class="edesc">We rebuild the process on Operaton and take it through production deployment with the rules, handoffs and exceptions modeled explicitly.</p><p class="efine">Open source engine. No proprietary lock-in.</p></div>
-          <ul class="efeat">
-            <li><i class="sq"></i>Production-ready orchestrated process</li>
-            <li><i class="sq"></i>Models and documentation</li>
-            <li><i class="sq"></i>Deployment owned by the client</li>
-          </ul>
-        </div>
-      </article>
-      <article class="efold" style="--i:2">
-        <svg class="foldtab" viewBox="0 0 96 23"><path d="M0 23 C10 23 10 3 21 3 L75 3 C86 3 86 23 96 23"/></svg>
-        <div class="erow">
-          <div><span class="dur">Ongoing</span><h3>Managed<br>Orchestration</h3><span class="price">Monthly, resource-based</span></div>
-          <div><p class="edesc">We host the orchestration layer and help evolve existing processes or bring new ones into the operating system.</p><p class="efine">You run the operation. We provide and improve the cloud.</p></div>
-          <ul class="efeat">
-            <li><i class="sq"></i>Cloud hosting and monitoring</li>
-            <li><i class="sq"></i>Process evolution projects</li>
-            <li><i class="sq"></i>Transparent resource-based usage</li>
-          </ul>
-        </div>
-      </article>
+    <div class="circs">
+      <div class="circ"><div class="ci"><span class="dur">2–3 weeks</span><h3>Process<br>Mapping</h3><span class="price">Expected $10K–$15K</span><p>We map one critical process, identify quick wins, and build the business case from your own operating numbers.</p></div></div>
+      <div class="circ"><div class="ci"><span class="dur">6–10 weeks per process</span><h3>Orchestration<br>Build</h3><span class="price">Fixed scope</span><p>We rebuild the process on Operaton and take it through production deployment with the rules, handoffs and exceptions modeled explicitly.</p></div></div>
+      <div class="circ"><div class="ci"><span class="dur">Ongoing</span><h3>Managed<br>Orchestration</h3><span class="price">Monthly, resource-based</span><p>We host the orchestration layer and help evolve existing processes or bring new ones into the operating system.</p></div></div>
     </div>
   </div>
 </section>
