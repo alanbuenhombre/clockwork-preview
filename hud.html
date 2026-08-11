@@ -207,6 +207,8 @@
     animation:seqcard 8s infinite both}
   .seq-card .ic{display:block;width:26px;height:26px;margin-bottom:16px}
   .seq-card .ic svg{width:26px;height:26px;display:block}
+  .seq-card .art{display:grid;place-items:center;padding:16px 6px 13px;margin-bottom:14px;border-bottom:.5px solid var(--line)}
+  .seq-card .art svg{width:100%;height:auto;max-height:54px}
   .seq-ln{stroke:var(--il);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
   .seq-ac{stroke:var(--il-accent);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
   .seq-af{fill:var(--il-accent)}
@@ -675,10 +677,10 @@
     <div class="repwf">
       <div class="repwf-top"><div><span class="eyebrow">Representative workflow</span><h3>New client onboarding</h3></div><span class="note">Example, not a client claim</span></div>
       <div class="seq">
-        <div class="seq-card"><span class="ic"><svg viewBox="0 0 24 24" fill="none"><path class="uc-line" d="M4 13.5v4A2.5 2.5 0 0 0 6.5 20h11a2.5 2.5 0 0 0 2.5-2.5v-4"/><path class="uc-line" d="M12 4v8"/><path class="uc-line" d="M8.5 9.5 12 13l3.5-3.5"/><circle cx="12" cy="16.6" r="1.7" style="fill:var(--il-accent)"/></svg></span><b>Request received</b><span class="own">Sales</span><span class="chip"><span class="d"></span>Controlled</span></div>
-        <div class="seq-card"><span class="ic"><svg viewBox="0 0 24 24" fill="none"><rect class="uc-line" x="4.5" y="4" width="15" height="16" rx="3"/><path class="uc-line" d="M8 10h8M8 13.5h5.5"/><circle cx="16.5" cy="14.5" r="1.7" style="fill:var(--il-accent)"/></svg></span><b>Information checked</b><span class="own">Operations</span><span class="chip"><span class="d"></span>Controlled</span></div>
-        <div class="seq-card"><span class="ic"><svg viewBox="0 0 24 24" fill="none"><path class="uc-line" d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3"/><path class="uc-line" d="M19.5 4.5V10H14"/><circle cx="12" cy="12" r="1.7" style="fill:var(--il-accent)"/></svg></span><b>Systems updated</b><span class="own">Automated</span><span class="chip"><span class="d"></span>Controlled</span></div>
-        <div class="seq-card"><span class="ic"><svg viewBox="0 0 24 24" fill="none"><path class="uc-line" d="M4 12h11"/><path class="uc-line" d="M11 7l5 5-5 5"/><circle cx="19.5" cy="12" r="1.8" style="fill:var(--il-accent)"/></svg></span><b>Handoff complete</b><span class="own">Delivery</span><span class="chip"><span class="d"></span>Complete</span></div>
+        <div class="seq-card"><div class="art"><svg viewBox="0 0 200 110" fill="none"><path class="uc-line" d="M52 66v14a12 12 0 0 0 12 12h72a12 12 0 0 0 12-12V66"/><path class="uc-line" d="M100 16v42"/><path class="uc-line" d="M82 42 100 60 118 42"/><circle cx="100" cy="78" r="7" style="fill:var(--il-accent)"/></svg></div><b>Request received</b><span class="own">Sales</span><span class="chip"><span class="d"></span>Controlled</span></div>
+        <div class="seq-card"><div class="art"><svg viewBox="0 0 200 110" fill="none"><rect class="uc-line" x="58" y="16" width="70" height="78" rx="10"/><path class="uc-line" d="M72 40h42M72 56h42M72 72h24"/><circle class="uc-line" cx="132" cy="76" r="15"/><path d="M125 76 131 82 140 69" style="stroke:var(--il-accent);stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round"/></svg></div><b>Information checked</b><span class="own">Operations</span><span class="chip"><span class="d"></span>Controlled</span></div>
+        <div class="seq-card"><div class="art"><svg viewBox="0 0 200 110" fill="none"><path class="uc-line" d="M141 55a41 41 0 1 1-12-29"/><path class="uc-line" d="M131 6v24h-24"/><circle cx="100" cy="55" r="8" style="fill:var(--il-accent)"/></svg></div><b>Systems updated</b><span class="own">Automated</span><span class="chip"><span class="d"></span>Controlled</span></div>
+        <div class="seq-card"><div class="art"><svg viewBox="0 0 200 110" fill="none"><circle class="uc-line" cx="46" cy="55" r="11"/><path class="uc-line" d="M61 55h60"/><path class="uc-line" d="M112 40 132 55 112 70"/><circle cx="150" cy="55" r="9" style="fill:var(--il-accent)"/></svg></div><b>Handoff complete</b><span class="own">Delivery</span><span class="chip"><span class="d"></span>Complete</span></div>
       </div>
     </div>
   </div>
