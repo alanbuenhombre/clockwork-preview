@@ -388,7 +388,7 @@
   /* ---- engagements as overlapping circles (Venn) ---- */
   .circs{display:flex;justify-content:center;align-items:center;flex-wrap:nowrap;margin-top:26px}
   .circ{flex:0 0 auto;width:min(33vw,376px);aspect-ratio:1;border:1px solid var(--line);border-radius:50%;position:relative;display:grid;place-items:center}
-  .circ + .circ{margin-left:-12%}
+  .circ + .circ{margin-left:-4%}
   .circ:nth-child(2){z-index:1}
   .ci{width:60%;text-align:left}
   .ci .dur{display:block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.05em;color:var(--muted);margin-bottom:9px}
@@ -398,7 +398,7 @@
   @media(max-width:860px){
     .circs{flex-direction:column}
     .circ{width:min(80vw,330px)}
-    .circ + .circ{margin-left:0;margin-top:-16%}
+    .circ + .circ{margin-left:0;margin-top:-9%}
     .ci{width:66%}
   }
 </style>
