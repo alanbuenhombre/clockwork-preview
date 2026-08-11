@@ -381,6 +381,7 @@
     .nav-links{display:none}.foot-links{justify-content:flex-start}.contact-box{padding:36px}
   }
   @media(max-width:520px){.stages{grid-template-columns:1fr}.seq{grid-template-columns:1fr}.form .row{grid-template-columns:1fr}section{padding:66px 0}}
+
 </style>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400&family=Manrope:wght@200;300;400;500&display=swap" rel="stylesheet">
 <style id="cwhero-style">
@@ -737,9 +738,9 @@
       <p class="sub">Kommit spent two years mapping, rebuilding, and running its own company on the same open-source orchestration stack. Clockwork turns that operating experience into a focused service for other growing businesses.</p>
     </div>
     <div class="stat-stack">
-      <div class="statc"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v4.5l3 2"/></svg><div><div class="big">2 years</div><p>Rebuilding Kommit on this stack before offering it.</p></div></div>
-      <div class="statc feat"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><div><div class="big">ISO/IEC 27001:2022</div><p>Information-security certification inherited from Kommit.</p></div></div>
-      <div class="statc"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg><div><div class="big">16+ years</div><p>Operating inside US companies.</p></div></div>
+      <div class="statc"><svg class="ic" viewBox="0 0 24 24" fill="none"><circle class="uc-line" cx="12" cy="12" r="9"/><path class="uc-line" d="M12 7.5v4.5l3 2"/><circle cx="12" cy="12" r="1.7" style="fill:var(--il-accent)"/></svg><div><div class="big">2 years</div><p>Rebuilding Kommit on this stack before offering it.</p></div></div>
+      <div class="statc feat"><svg class="ic" viewBox="0 0 24 24" fill="none"><rect class="uc-line" x="4" y="10" width="16" height="11" rx="2"/><path class="uc-line" d="M8 10V7a4 4 0 0 1 8 0v3"/><circle cx="12" cy="15.5" r="1.7" style="fill:var(--il-accent)"/></svg><div><div class="big">ISO/IEC 27001:2022</div><p>Information-security certification inherited from Kommit.</p></div></div>
+      <div class="statc"><svg class="ic" viewBox="0 0 24 24" fill="none"><path class="uc-line" d="M3 21h18M5 21V8l7-5 7 5v13"/><circle cx="12" cy="14.5" r="1.7" style="fill:var(--il-accent)"/></svg><div><div class="big">16+ years</div><p>Operating inside US companies.</p></div></div>
     </div>
   </div>
 </section>
@@ -1102,6 +1103,25 @@ setMode(true);
     img.src='data:image/svg+xml,'+encodeURIComponent(new XMLSerializer().serializeToString(clone));
   }
   /* dotify disabled — keep the minimalist line icons (with accent) */
+})();
+</script>
+
+<script>
+(function(){
+ const D={
+   eye:c=>{c.lineWidth=1.7;c.beginPath();c.moveTo(2,12);c.bezierCurveTo(6.5,6,17.5,6,22,12);c.bezierCurveTo(17.5,18,6.5,18,2,12);c.stroke();c.beginPath();c.arc(12,12,3.2,0,7);c.stroke();c.beginPath();c.arc(12,12,1.4,0,7);c.fill();},
+   nodes:c=>{c.lineWidth=1.5;c.beginPath();c.moveTo(5,13.5);c.lineTo(11,7.5);c.lineTo(17,12.5);c.moveTo(11,7.5);c.lineTo(13,18);c.stroke();[[5,13.5,0],[17,12.5,0],[13,18,0],[11,7.5,1]].forEach(a=>{c.beginPath();c.arc(a[0],a[1],1.9,0,7);a[2]?c.fill():c.stroke();});},
+   orchestrate:c=>{c.lineWidth=1.5;c.beginPath();c.moveTo(8.5,12);c.lineTo(15,6);c.moveTo(8.5,12);c.lineTo(15,12);c.moveTo(8.5,12);c.lineTo(15,18);c.stroke();c.fillRect(3.5,9.5,5,5);[[15,3.5],[15,9.5],[15,15.5]].forEach(a=>c.strokeRect(a[0],a[1],5,5));},
+   gauge:c=>{c.lineWidth=1.7;c.beginPath();c.arc(12,15,8,Math.PI,2*Math.PI);c.stroke();c.beginPath();c.moveTo(12,15);c.lineTo(16.5,10);c.stroke();c.beginPath();c.arc(12,15,1.4,0,7);c.fill();},
+   trend:c=>{c.lineWidth=1.7;c.beginPath();c.moveTo(3.5,17.5);c.lineTo(9,11.5);c.lineTo(13,14.5);c.lineTo(20.5,5);c.stroke();c.beginPath();c.arc(3.5,17.5,1.9,0,7);c.fill();},
+   clock:c=>{c.lineWidth=1.8;c.beginPath();c.arc(12,12,8.6,0,7);c.stroke();c.beginPath();c.moveTo(12,7.4);c.lineTo(12,12);c.lineTo(15.6,14);c.stroke();},
+   lock:c=>{c.lineWidth=1.8;c.beginPath();c.arc(12,9.2,4,Math.PI,2*Math.PI);c.stroke();c.strokeRect(6,9.2,12,9.8);},
+   building:c=>{c.lineWidth=1.7;c.beginPath();c.moveTo(4,20);c.lineTo(4,8.5);c.lineTo(12,3.5);c.lineTo(20,8.5);c.lineTo(20,20);c.stroke();c.beginPath();c.moveTo(2.5,20.2);c.lineTo(21.5,20.2);c.stroke();c.strokeRect(9.5,14,5,6);}
+ };
+ function raster(name,n,th){const draw=D[name];if(!draw)return null;const SS=8,W=n*SS,H=n*SS;const cv=document.createElement('canvas');cv.width=W;cv.height=H;const c=cv.getContext('2d');const s=Math.min(W,H)/24*0.82;c.translate((W-24*s)/2,(H-24*s)/2);c.scale(s,s);c.lineJoin='round';c.lineCap='round';c.strokeStyle='#000';c.fillStyle='#000';draw(c);const d=c.getImageData(0,0,W,H).data,g=[];for(let cy=0;cy<n;cy++)for(let cx=0;cx<n;cx++){let sum=0;for(let y=0;y<SS;y++)for(let x=0;x<SS;x++)sum+=d[(((cy*SS+y)*W)+(cx*SS+x))*4+3];g.push(sum/(SS*SS*255)>=th?1:0);}return g;}
+ function paint(el,g,n){el.style.setProperty('--gc',n);el.innerHTML='';for(let i=0;i<g.length;i++){const d=document.createElement('div');d.className='gcell';if(g[i]){d.classList.add('on');const x=i%n,y=(i/n)|0;d.style.animationDelay=((x+y)*0.02).toFixed(3)+'s';}else d.classList.add('faint');el.appendChild(d);}}
+ const N=14,TH=0.46;
+ document.querySelectorAll('.gico[data-icon]').forEach(el=>{const g=raster(el.dataset.icon,N,TH);if(g)paint(el,g,N);});
 })();
 </script>
 </body>
