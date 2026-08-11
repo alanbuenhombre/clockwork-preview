@@ -386,7 +386,7 @@
 
 
   /* ---- engagements as overlapping circles (Venn) ---- */
-  .circs{display:flex;justify-content:center;align-items:center;flex-wrap:nowrap;margin-top:26px}
+  .circs{display:flex;justify-content:center;align-items:center;flex-wrap:nowrap;margin-top:clamp(52px,6vw,84px)}
   .circ{flex:0 0 auto;width:min(33vw,376px);aspect-ratio:1;border:1px solid var(--line);border-radius:50%;position:relative;display:grid;place-items:center}
   .circ + .circ{margin-left:-4%}
   .circ:nth-child(2){z-index:1}
