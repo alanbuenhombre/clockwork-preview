@@ -391,7 +391,16 @@
   .circ + .circ{margin-left:-4%}
   .circ:nth-child(2){z-index:1}
   .ci{width:60%;text-align:left}
-  .ci .dur{display:block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.05em;color:var(--muted);margin-bottom:9px}
+  .ci .dur{display:block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.05em;color:var(--accent);margin-bottom:9px}
+  .cring{position:absolute;inset:0;width:100%;height:100%;transform:rotate(-90deg);pointer-events:none;overflow:visible}
+  .cring circle{fill:none;stroke:var(--accent);stroke-width:.7;stroke-linecap:round;stroke-dasharray:58 400;stroke-dashoffset:58}
+  .circ:nth-child(1) .cring circle{animation:cdraw1 6.6s ease infinite}
+  .circ:nth-child(2) .cring circle{animation:cdraw2 6.6s ease infinite}
+  .circ:nth-child(3) .cring circle{animation:cdraw3 6.6s ease infinite}
+  @keyframes cdraw1{0%{stroke-dashoffset:58}6%{stroke-dashoffset:0}92%{stroke-dashoffset:0}99%,100%{stroke-dashoffset:58}}
+  @keyframes cdraw2{0%,30%{stroke-dashoffset:58}36%{stroke-dashoffset:0}92%{stroke-dashoffset:0}99%,100%{stroke-dashoffset:58}}
+  @keyframes cdraw3{0%,63%{stroke-dashoffset:58}69%{stroke-dashoffset:0}92%{stroke-dashoffset:0}99%,100%{stroke-dashoffset:58}}
+  @media (prefers-reduced-motion: reduce){.cring circle{animation:none;stroke-dashoffset:0}}
   .ci h3{font-size:clamp(22px,2.3vw,33px);font-weight:300;line-height:1.02;letter-spacing:-.02em;color:var(--ink)}
   .ci .price{display:block;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);margin-top:11px}
   .ci p{font-size:12.5px;line-height:1.5;color:var(--lede);margin-top:14px;max-width:23ch}
@@ -708,9 +717,9 @@
   <div class="wrap">
     <div class="eng-head"><h2 class="display">Start with one process. <b>Keep going only if it earns the right.</b></h2><p>Every stage produces something useful and owned by you. The relationship can stop after mapping, continue through production, or expand into managed hosting and evolution.</p></div>
     <div class="circs">
-      <div class="circ"><div class="ci"><span class="dur">2–3 weeks</span><h3>Process<br>Mapping</h3><span class="price">Expected $10K–$15K</span><p>We map one critical process, identify quick wins, and build the business case from your own operating numbers.</p></div></div>
-      <div class="circ"><div class="ci"><span class="dur">6–10 weeks per process</span><h3>Orchestration<br>Build</h3><span class="price">Fixed scope</span><p>We rebuild the process on Operaton and take it through production deployment with the rules, handoffs and exceptions modeled explicitly.</p></div></div>
-      <div class="circ"><div class="ci"><span class="dur">Ongoing</span><h3>Managed<br>Orchestration</h3><span class="price">Monthly, resource-based</span><p>We host the orchestration layer and help evolve existing processes or bring new ones into the operating system.</p></div></div>
+      <div class="circ"><svg class="cring" viewBox="0 0 100 100"><circle cx="50" cy="50" r="49"/></svg><div class="ci"><span class="dur">2–3 weeks</span><h3>Process<br>Mapping</h3><span class="price">Expected $10K–$15K</span><p>We map one critical process, identify quick wins, and build the business case from your own operating numbers.</p></div></div>
+      <div class="circ"><svg class="cring" viewBox="0 0 100 100"><circle cx="50" cy="50" r="49"/></svg><div class="ci"><span class="dur">6–10 weeks per process</span><h3>Orchestration<br>Build</h3><span class="price">Fixed scope</span><p>We rebuild the process on Operaton and take it through production deployment with the rules, handoffs and exceptions modeled explicitly.</p></div></div>
+      <div class="circ"><svg class="cring" viewBox="0 0 100 100"><circle cx="50" cy="50" r="49"/></svg><div class="ci"><span class="dur">Ongoing</span><h3>Managed<br>Orchestration</h3><span class="price">Monthly, resource-based</span><p>We host the orchestration layer and help evolve existing processes or bring new ones into the operating system.</p></div></div>
     </div>
   </div>
 </section>
