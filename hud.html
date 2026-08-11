@@ -289,18 +289,30 @@
   .cc p{color:var(--text);font-size:15.5px;margin-bottom:26px}
   .assur{list-style:none}
   .assur li{display:flex;align-items:center;gap:12px;padding:11px 0;font-size:14.5px;color:var(--text);border-top:1px solid var(--line)}
-  /* unified assurances + illustration: one connected 3-step journey */
-  .assur-flow{position:relative;margin-top:26px;display:flex;flex-direction:column}
-  .assur-flow::before{content:"";position:absolute;left:8px;top:30px;bottom:30px;width:1.5px;background:var(--line)}
-  .af{position:relative;z-index:1;display:grid;grid-template-columns:16px 1fr;gap:18px;align-items:center;padding:15px 0;border-top:1px solid var(--line)}
-  .af:first-child{border-top:0}
-  .af .dot{position:relative;justify-self:center;width:13px;height:13px;border-radius:50%;background:var(--il);box-shadow:0 0 0 5px var(--bg)}
-  .af.key .dot{width:15px;height:15px;background:var(--il-accent);box-shadow:0 0 0 5px var(--bg)}
-  .af.key .dot::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:1.5px solid var(--il-accent);animation:afpulse 3s ease-in-out infinite}
-  .af.open .dot{background:var(--bg);border:1.6px solid var(--il);box-shadow:0 0 0 4px var(--bg)}
-  .af p{margin:0;font-size:14.5px;color:var(--text)}
-  .af.key p{color:var(--ink);font-weight:500}
-  @keyframes afpulse{0%,100%{transform:scale(1);opacity:.55}50%{transform:scale(1.4);opacity:0}}
+  /* HUD-style assessment panel (assurances) — echoes the hero HUD */
+  .ahud{position:relative;margin-top:28px;font-family:'IBM Plex Mono',monospace;color:var(--hud);border:1px solid var(--line-2);border-radius:10px;padding:20px 22px;background:color-mix(in srgb,var(--ink) 3%,transparent);overflow:hidden}
+  .ahud::before,.ahud::after{content:"";position:absolute;width:13px;height:13px;border:1.5px solid var(--hud);opacity:.6;pointer-events:none}
+  .ahud::before{top:8px;left:8px;border-right:0;border-bottom:0}
+  .ahud::after{bottom:8px;right:8px;border-left:0;border-top:0}
+  .ahud-head{display:flex;justify-content:space-between;align-items:center;padding-bottom:14px;border-bottom:1px solid var(--line)}
+  .ahud-title{font-family:'Manrope',sans-serif;font-size:15px;font-weight:500;color:var(--ink)}
+  .ahud-live{display:inline-flex;align-items:center;gap:7px;font-size:10px;letter-spacing:.16em;color:var(--hud2)}
+  .ahud-live i{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:ahblink 1.4s steps(1) infinite}
+  .ahud-rows{position:relative}
+  .ahr{position:relative;display:grid;grid-template-columns:74px 1fr;gap:16px;align-items:center;padding:13px 8px;border-top:1px solid var(--line)}
+  .ahud-rows .ahr:first-child{border-top:0}
+  .ahr .k{position:relative;z-index:1;font-size:10px;letter-spacing:.13em;color:var(--hud2)}
+  .ahr .v{position:relative;z-index:1;font-family:'Manrope',sans-serif;font-size:14.5px;color:var(--text)}
+  .ahr::after{content:"";position:absolute;inset:0;background:color-mix(in srgb,var(--accent) 9%,transparent);border-left:2px solid var(--accent);opacity:0;animation:ahrow 6.6s ease-in-out infinite}
+  .ahud-rows .ahr:nth-child(1)::after{animation-delay:0s}
+  .ahud-rows .ahr:nth-child(2)::after{animation-delay:2.2s}
+  .ahud-rows .ahr:nth-child(3)::after{animation-delay:4.4s}
+  .ahud-bar{height:3px;border-radius:2px;background:var(--line);margin:16px 0 12px;overflow:hidden}
+  .ahud-bar span{display:block;height:100%;width:14%;background:var(--accent);border-radius:2px;animation:ahscan 3.6s cubic-bezier(.5,0,.5,1) infinite}
+  .ahud-foot{display:flex;justify-content:space-between;font-size:9.5px;letter-spacing:.12em;color:var(--hud2)}
+  @keyframes ahblink{0%,55%{opacity:1}56%,100%{opacity:.18}}
+  @keyframes ahrow{0%,100%{opacity:0}5%{opacity:1}27%{opacity:1}33%{opacity:0}}
+  @keyframes ahscan{0%{margin-left:0;width:14%}50%{margin-left:52%;width:48%}100%{margin-left:100%;width:14%}}
   .assur li:first-child{border-top:0}.assur li .p{color:var(--accent)}
   .form{border:0;outline:.5px solid var(--line);outline-offset:-.5px;border-radius:var(--radius-lg);padding:30px;background:var(--card)}
   .form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
@@ -721,10 +733,18 @@
           <span class="eyebrow">Map a process</span>
           <h2 class="display">Which process is costing you control?</h2>
           <p>Tell us where coordination is getting expensive. We'll assess whether Process Mapping is the right first engagement — without pretending every problem needs orchestration.</p>
-          <div class="assur-flow">
-            <div class="af key"><span class="dot"></span><p>One critical process</p></div>
-            <div class="af"><span class="dot"></span><p>A standalone, useful deliverable</p></div>
-            <div class="af open"><span class="dot"></span><p>No obligation to continue</p></div>
+          <div class="ahud" aria-label="Engagement scope">
+            <div class="ahud-head">
+              <span class="ahud-title">Assessment scope</span>
+              <span class="ahud-live"><i></i>READY</span>
+            </div>
+            <div class="ahud-rows">
+              <div class="ahr"><span class="k">SCOPE</span><span class="v">One critical process</span></div>
+              <div class="ahr"><span class="k">OUTPUT</span><span class="v">A standalone, useful deliverable</span></div>
+              <div class="ahr"><span class="k">COMMIT</span><span class="v">No obligation to continue</span></div>
+            </div>
+            <div class="ahud-bar"><span></span></div>
+            <div class="ahud-foot"><span>// PROTOCOL · NO LOCK-IN</span><span>CW-0001</span></div>
           </div>
         </div>
         <form class="form" onsubmit="return false">
