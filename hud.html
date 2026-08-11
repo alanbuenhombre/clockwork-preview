@@ -298,21 +298,26 @@
   .ahud-title{font-family:'Manrope',sans-serif;font-size:15px;font-weight:500;color:var(--ink)}
   .ahud-live{display:inline-flex;align-items:center;gap:7px;font-size:10px;letter-spacing:.16em;color:var(--hud2)}
   .ahud-live i{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:ahblink 1.4s steps(1) infinite}
-  .ahud-rows{position:relative}
-  .ahr{position:relative;display:grid;grid-template-columns:74px 1fr;gap:16px;align-items:center;padding:13px 8px;border-top:1px solid var(--line)}
+  .ahud-rows{position:relative;padding-left:4px}
+  .ahud-rows::before{content:"";position:absolute;left:9px;top:26px;bottom:26px;width:1px;background:var(--line);z-index:0}
+  .ahr{position:relative;display:grid;grid-template-columns:20px 58px 1fr;gap:13px;align-items:center;padding:13px 8px;border-top:1px solid var(--line)}
   .ahud-rows .ahr:first-child{border-top:0}
+  .ahr .n{position:relative;z-index:1;width:11px;height:11px;border-radius:50%;border:1px solid var(--hud2);background:var(--paper);box-shadow:0 0 0 4px var(--paper)}
+  .ahr .n::after{content:"";position:absolute;inset:-1px;border-radius:50%;background:var(--accent);opacity:0}
   .ahr .k{position:relative;z-index:1;font-size:10px;letter-spacing:.13em;color:var(--hud2)}
   .ahr .v{position:relative;z-index:1;font-family:'Manrope',sans-serif;font-size:14.5px;color:var(--text)}
-  .ahr::after{content:"";position:absolute;inset:0;background:color-mix(in srgb,var(--accent) 9%,transparent);border-left:2px solid var(--accent);opacity:0;animation:ahrow 6.6s ease-in-out infinite}
-  .ahud-rows .ahr:nth-child(1)::after{animation-delay:0s}
-  .ahud-rows .ahr:nth-child(2)::after{animation-delay:2.2s}
-  .ahud-rows .ahr:nth-child(3)::after{animation-delay:4.4s}
+  .ahr::after{content:"";position:absolute;inset:0;background:color-mix(in srgb,var(--accent) 9%,transparent);border-left:2px solid var(--accent);opacity:0}
+  .ahud-rows .ahr:nth-child(1)::after,.ahud-rows .ahr:nth-child(1) .n::after{animation:ahd1 6s ease infinite}
+  .ahud-rows .ahr:nth-child(2)::after,.ahud-rows .ahr:nth-child(2) .n::after{animation:ahd2 6s ease infinite}
+  .ahud-rows .ahr:nth-child(3)::after,.ahud-rows .ahr:nth-child(3) .n::after{animation:ahd3 6s ease infinite}
   .ahud-bar{height:3px;border-radius:2px;background:var(--line);margin:16px 0 12px;overflow:hidden}
-  .ahud-bar span{display:block;height:100%;width:14%;background:var(--accent);border-radius:2px;animation:ahscan 3.6s cubic-bezier(.5,0,.5,1) infinite}
+  .ahud-bar span{display:block;height:100%;width:0;background:var(--accent);border-radius:2px;animation:ahfill 6s linear infinite}
   .ahud-foot{display:flex;justify-content:space-between;font-size:9.5px;letter-spacing:.12em;color:var(--hud2)}
   @keyframes ahblink{0%,55%{opacity:1}56%,100%{opacity:.18}}
-  @keyframes ahrow{0%,100%{opacity:0}5%{opacity:1}27%{opacity:1}33%{opacity:0}}
-  @keyframes ahscan{0%{margin-left:0;width:14%}50%{margin-left:52%;width:48%}100%{margin-left:100%;width:14%}}
+  @keyframes ahd1{0%{opacity:0}4%{opacity:1}95%{opacity:1}100%{opacity:0}}
+  @keyframes ahd2{0%,31%{opacity:0}35%{opacity:1}95%{opacity:1}100%{opacity:0}}
+  @keyframes ahd3{0%,64%{opacity:0}68%{opacity:1}95%{opacity:1}100%{opacity:0}}
+  @keyframes ahfill{0%{width:0}90%{width:100%}100%{width:100%}}
   .assur li:first-child{border-top:0}.assur li .p{color:var(--accent)}
   .form{border:0;outline:.5px solid var(--line);outline-offset:-.5px;border-radius:var(--radius-lg);padding:30px;background:var(--card)}
   .form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
@@ -739,9 +744,9 @@
               <span class="ahud-live"><i></i>READY</span>
             </div>
             <div class="ahud-rows">
-              <div class="ahr"><span class="k">SCOPE</span><span class="v">One critical process</span></div>
-              <div class="ahr"><span class="k">OUTPUT</span><span class="v">A standalone, useful deliverable</span></div>
-              <div class="ahr"><span class="k">COMMIT</span><span class="v">No obligation to continue</span></div>
+              <div class="ahr"><span class="n"></span><span class="k">SCOPE</span><span class="v">One critical process</span></div>
+              <div class="ahr"><span class="n"></span><span class="k">OUTPUT</span><span class="v">A standalone, useful deliverable</span></div>
+              <div class="ahr"><span class="n"></span><span class="k">COMMIT</span><span class="v">No obligation to continue</span></div>
             </div>
             <div class="ahud-bar"><span></span></div>
             <div class="ahud-foot"><span>// PROTOCOL · NO LOCK-IN</span><span>CW-0001</span></div>
