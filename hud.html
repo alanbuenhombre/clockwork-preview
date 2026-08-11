@@ -231,6 +231,20 @@
     6%,20%{background:var(--accent);color:var(--accent-ink)}
     26%{background:var(--line);color:var(--muted)}
   }
+  /* minimal tracking timeline (representative workflow) */
+  .track{margin-top:12px}
+  .tstep{display:flex;gap:15px;align-items:stretch}
+  .tmark{flex:0 0 22px;display:flex;flex-direction:column;align-items:center}
+  .tmark svg{width:22px;height:22px;flex:0 0 auto;color:var(--accent);animation:tcheck 6s ease-in-out infinite;transform-origin:center}
+  .tstep:not(:last-child) .tmark::after{content:"";width:1.5px;flex:1;background:color-mix(in srgb,var(--accent) 42%,transparent);margin:4px 0;border-radius:1px}
+  .tinfo{padding:1px 0 26px}
+  .tstep:last-child .tinfo{padding-bottom:0}
+  .tinfo b{display:block;font-size:14.5px;font-weight:500;color:var(--ink);line-height:1.2}
+  .tinfo span{display:block;margin-top:5px;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);font-family:'IBM Plex Mono',monospace}
+  .tstep:nth-child(2) .tmark svg{animation-delay:.5s}
+  .tstep:nth-child(3) .tmark svg{animation-delay:1s}
+  .tstep:nth-child(4) .tmark svg{animation-delay:1.5s}
+  @keyframes tcheck{0%{transform:scale(1)}3%{transform:scale(1.17)}7%{transform:scale(1)}72%,100%{transform:scale(1)}}
 
   /* ===== ENGAGEMENTS — static rows with folder-tab lines ===== */
   .eng-head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:8px}
@@ -657,11 +671,11 @@
     </div>
     <div class="repwf">
       <div class="repwf-top"><div><span class="eyebrow">Representative workflow</span><h3>New client onboarding</h3></div><span class="note">Example, not a client claim</span></div>
-      <div class="seq">
-        <div class="seq-card"><span class="ic"><svg viewBox="0 0 24 24" fill="none"><path class="seq-ln" d="M4 14v3.5A2.5 2.5 0 0 0 6.5 20h11a2.5 2.5 0 0 0 2.5-2.5V14"/><path class="seq-ac" d="M12 4v9"/><path class="seq-ac" d="M8.5 9.5 12 13l3.5-3.5"/></svg></span><b>Request received</b><span class="own">Sales</span><span class="chip"><span class="d"></span>Controlled</span></div>
-        <div class="seq-card"><span class="ic"><svg viewBox="0 0 24 24" fill="none"><rect class="seq-ln" x="4" y="4" width="16" height="16" rx="3.5"/><path class="seq-ac" d="m8.5 12.5 2.5 2.5 5-5.5"/></svg></span><b>Information checked</b><span class="own">Operations</span><span class="chip"><span class="d"></span>Controlled</span></div>
-        <div class="seq-card"><span class="ic"><svg viewBox="0 0 24 24" fill="none"><path class="seq-ln" d="M20 12a8 8 0 1 1-2.34-5.66"/><path class="seq-ac" d="M20 4v4h-4"/></svg></span><b>Systems updated</b><span class="own">Automated</span><span class="chip"><span class="d"></span>Controlled</span></div>
-        <div class="seq-card"><span class="ic"><svg viewBox="0 0 24 24" fill="none"><path class="seq-ln" d="M4 12h10"/><path class="seq-ac" d="m11 7 5 5-5 5"/><circle class="seq-af" cx="19.5" cy="12" r="1.8"/></svg></span><b>Handoff complete</b><span class="own">Delivery</span><span class="chip"><span class="d"></span>Complete</span></div>
+      <div class="track">
+        <div class="tstep"><span class="tmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg></span><span class="tinfo"><b>Request received</b><span>Sales · Controlled</span></span></div>
+        <div class="tstep"><span class="tmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg></span><span class="tinfo"><b>Information checked</b><span>Operations · Controlled</span></span></div>
+        <div class="tstep"><span class="tmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg></span><span class="tinfo"><b>Systems updated</b><span>Automated · Controlled</span></span></div>
+        <div class="tstep"><span class="tmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg></span><span class="tinfo"><b>Handoff complete</b><span>Delivery · Complete</span></span></div>
       </div>
     </div>
   </div>
